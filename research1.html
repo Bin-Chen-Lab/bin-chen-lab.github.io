@@ -74,109 +74,43 @@
       <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-8 col-md-push-3">
-          <p class="lead">A systems approach to discover new therapeutics</p>
-          <p>Rapidly decreasing costs of molecular measurement technologies not only enable profiling of disease sample molecular features (e.g., transcriptome, proteome, metabolome) at different levels (e.g., tissues, single cells), but also enable measuring of molecular signatures of individual drugs in clinically relevant models. Exploring methods to relate diseases to potentially efficacious drugs through various molecular features is critically important in the discovery of new therapeutics. The target-based drug discovery approach that focuses on interfering with individual targets is challenged by the lack of drug efficacy, drug resistance, and off-target effects. 
-              We propose to employ a systems-based approach that identifies drugs that reverse the molecular state of a disease. Using this approach, we have successfully identified drug candidates for three cancers: 
-              Ewing’s sarcoma (<a href="http://www.ncbi.nlm.nih.gov/pubmed/27863422" target="_blank">Pessetto, Oncotarget, 2016</a>), liver cancer (<a href="http://www.gastrojournal.org/article/S0016-5085(17)30264-0/abstract" target="_blank">Chen, Gastroenterology, 2017</a>) and basal cell carcinoma (<a href="http://www.ncbi.nlm.nih.gov/pubmed/29093271" target="_blank">Mirza, JCI Insight, 2017</a>) in the past few years. In the Ewing sarcoma work, this systems-approach achieved a hit rate of >50% in predicting effective drugs.  In the liver cancer work, we demonstrated that the expression of disease genes was reversed in a clinically relevant mouse model after drug treatment. 
-              In our recent pan-cancer analysis, we found that the potency to reverse cancer gene expression correlates to drug efficacy (<a href="https://www.nature.com/articles/ncomms16022" target="_blank">Chen, Nature Communications, 2017</a>). Moving forward, we will move our drug candidates to the clinic for the liver cancer patients, meanwhile, we will explore the following topics.</p>
-            <p><b>1. Identify drugs to overcome drug resistance</b>. Our past focus was on primary cancers, which have a large amount of molecular data publicly available. Since drug resistance is emerging in various cancers and relevant data are growing rapidly, we are excited to apply the systems approach to study drug resistance. For example, in neoadjuvant chemotherapy (NAC), breast cancer patients who achieve pathologic complete response (pCR) likely have long-term survival, yet there remains a significant number of patients with poor response to NAC and who fail to achieve pCR. New drugs are therefore needed to overcome chemoresistance to help patients achieve pCR. We propose to identify drugs that reverse the signature of non-responders. </p>
-            <p><b>2. Discover novel oncogene inhibitors</b>. Despite the discovery of numerous driver oncogenes, many of the most prevalent oncogenic alterations cannot be blocked with small molecule inhibitors. We will use the systems-based approach to identify small molecules that reverse oncogene specific signatures. We are working on c-MYC and several others.</p>
-            <p><b>3. Develop the Open Cancer Therapeutic Discovery portal (OCTAD)</b> To help computational biologists contribute to the therapeutic discovery pipeline improvement, we have released our <a href="https://github.com/Bin-Chen-Lab/octad_desktop" target="_blank">desktop version</a>. To help researchers easily use our pipeline to predict drug candidates for the disease of their interest, we are actively developing a <a href="https://octad.org" target="_blank">web portal</a>. 
+          <p class="lead">OMICS-based drug discovery</p>
+ <p>Conventional drug discovery focuses on finding agents that modulate one molecular feature (mostly a protein target). This approach was adopted a few decades ago, even before the emergence of omics technologies. Today’s technologies allow profiling thousands of molecular features including proteins, mRNAs, and metabolites, all of which can contribute to disease development. Finding one magic bullet from these thousands of features is challenging. Moreover, focusing only on a single feature does not fully utilize all the information generated from new omics technologies. We employed a systems approach that considers how drugs affect a disease gene expression signature (comprised of a set of up-/down-regulated disease genes). Using this approach, we discovered therapeutic candidates for hepatocellular carcinoma (HCC), Ewing Sarcoma, Basal cell carcinoma, melanoma, Alzheimer’s disease, and SARS-CoV-2. Moreover, we discovered that the potency to reverse gene expression correlates with drug efficacy, providing strong evidence of using this approach in drug repurposing (Chen, Nature Communications, 2017). We developed the drug-repurposing platform called OCTAD (Nature Protocols, 2021), allowing researchers to predict repurposed drug candidates for cancers and cancer subtypes. 
+
+<p>We actively develop new methods to support novel compound screening and lead optimization. Our two recent conference papers showcased our enhanced model, achieved through improving the training data quality (Sun, ICDM, 2020), and pre-training graph neural network (Sun, KDD, 2021). With the predicted profiles of commercially available compounds, we can quickly predict novel compounds based on disease gene expression profiles. Using our computational approach, we predict new candidates for HCC, diffuse intrinsic pontine glioma (DIPG), and SARS-CoV-2. 
+
+<p>With the emergence of single-cell RNASeq data, we plan to apply this approach to identify compounds that could control cell lineage development or modulate the microenvironment. This approach also holds great promise for identifying novel inhibitors for undruggable targets. On the technical side, we will develop methods to support de novo drug design using deep reinforcement learning and add interpretable features in the model. 
+
+        </div>
+        <div class="col-md-3 col-md-pull-8">
+          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/lab_research1.png">
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-8 col-md-push-3">
+          <p class="lead">OMICS-based biomarker and target discovery</p>
+<p>The omics-based drug discovery work could not flourish without an extensive understanding of disease mechanisms. Therefore, the second pillar of my lab research focuses on leveraging emerging single-cell RNASeq, rich bulk gene expression profiles, and advanced machine learnings to discover novel biomarkers and therapeutic targets. We started this journey by working with local physicians to predict MODS patients who would need ECMO life support. We now collect patient blood for scRNASeq in order to delineate cell compositions and cell-cell interactions.
+
+<p>In addition to the MODS biomarker work, four projects are undergoing: 1) characterizing microenvironment of liver diseases through in silico characterization of bulk tissues and spatial transcriptomics, 2) portraying pan-cancer liver metastasis microenvironment, 3) discovering bispecific targets for cancer immunotherapy, and 4) predicting surfaceome using multi-modality single cell data and transfer learning.
+
           </div>
         <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/repositioning.jpg">
+          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/lab_research2.jpg">
         </div>
       </div>
       <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-8 col-md-push-3">
-          <p class="lead">Personalized cancer therapy</p>
-          <p>Current preclinical and clinical approaches select therapies primarily
-            based on actionable mutations, yet patients may have no actionable mutations
-            or multiple actionable mutations that are hard to prioritize, suggesting
-            the need for additional biomarkers. The recent disappointing result from
-            the SHIVA trial indicates that more predictive biomarkers of drug efficacy
-            are needed to select therapies. In addition to mutations, other molecular
-            data (e.g., gene, protein) have been widely explored as biomarkers in personalized
-            therapy, including gene expression based biomarkers such as Oncotype DX
-            and MammaPrint in breast cancer treatment, however, the biomarkers for
-            many cancer drugs are currently quite limited as it takes many years to
-            run clinical trials to identify and validate a biomarker for a single drug.
-            The recent efforts have enabled the large-scale identification of various
-            types of molecular biomarkers through correlating drug sensitivity with
-            molecular profiles of pre-treatment basal cancer cell lines. We are interested
-            in developing methods to match these biomarkers to individual patients
-            to inform therapy in the clinic. Our first effort is centered on building statistical models to improve drug sensitivity data (<a href="https://doi.org/10.1101/386896" target="_blank">Zhiyue Hu, 2019, PSB</a>). </p>
-        </div>
+          <p class="lead">Virtual platform to support translational drug discovery</p>
+<p>In order to increase the drug discovery success rates, we have to scrutinize every step in translational research. My lab is dedicated to developing a virtual platform supported by machine learning and data analytics. The platform includes tumor sample selection, reference normal tissue selection, cell line evaluation, and EMR data cleaning and mining. We recently develop TransCell that allows in-silico characterization of cell line genetic landscape and cellular responses solely from gene expression data. The lab can access the EMR data and >8000 biobank patient specimens at Spectrum Health. 
+          </div>
         <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/prescription.gif">
-        </div>
-      </div>
-      <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-8 col-md-push-3">
-          <p class="lead">A big data approach to study metastatic cancer</p>
-          <p>Metastasis is the most common cause of cancer-related death, as such, there is an urgent need to discover new therapies to treat metastasized cancers. We are extending our primary cancer work to study metastatic cancer. We are interested to use open big data to ask significant questions related to metastatic cancer research. One recent example is to <a href="https://doi.org/10.1101/337287" target="_blank">evaluate cell lines and organoids as models for metastatic cancer</a>. </p>
-        </div>
-        <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/metastatic_cancer.png" height="60%" width="60%">
+          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/lab_research3.png" height="60%" width="60%">
         </div>
       </div>
         
-      <hr class="featurette-divider">
-      <div class="row featurette">
 
-        <div class="col-md-8 col-md-push-3">
-          <p class="lead">Deep learning and Deep reinforcement learning in drug discovery</p>
-          <p>The new technologies in deep learning and deep reinforcement learning are simply blowing our mind everyday. We are interested in implementing these technologies into drug discovery. Examples include using deep learning autoencoder to learn gene expression profiles (<a href="https://doi.org/10.1101/336909" target="_blank">William Zeng, BMC Genomics, 2018</a>) and exploring GAN to design new compounds.  Too much to do! If you understand this figure, please join us:)</p>
-        </div>
-         <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/deep_learning_fig.png">
-        </div>          
-      </div>
-        
-      <hr class="featurette-divider">
-        <div class="col-md-8 col-md-push-3">
-          <p class="lead">Drug mechanisms in a cellular context</p>
-          <p>One challenge in the systems-based therapeutic discovery approach is that
-            drug mechanisms are barely known. We will leverage drug-target prediction
-            models we previously developed (
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed/22859915" target="_blank">1</a>,
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed/22360769" target="_blank">2</a>,
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed/21903625 " target="_blank">3</a>) and the new drug/shRNA-mediated gene expression profiles to infer mechanisms
-            of actions in individual cell lines.</p>
-        </div>
-
-      <div class="row featurette">
-         <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/moa.jpg">
-        </div>
-      </div>
-       
-        <hr class="featurette-divider">
-
-          <div class="row featurette">
-            <div class="col-md-8 col-md-push-3">
-                <iframe width="425" height="355" src="https://www.youtube.com/embed/jQIVSQETnmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <div class="row featurette">
-            <div class="col-md-8 col-md-push-3">
-                <iframe width="425" height="355" src="https://www.youtube.com/embed/HkEEvcPS0fo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-        
-      <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-10 col-md-push-0">
-          <p class="lead">Past projects</p>
-          <p>We used Semantic Web Technologies to integrate (
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed/20478034 " target="_blank">Chem2Bio2RDF</a>), annotate (
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed/22401035" target="_blank">Chem2Bio2OWL</a>), and mine (
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed/22859915" target="_blank">SLAP</a>) open linked data for drug discovery.</p>
-        </div>
-      </div>
       <hr class="featurette-divider">
       <footer>
         <p></p>
