@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AI Group for Drug Discovery</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9fb;
+            color: #444;
+        }
+
+        h1, h2, h3 {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1abc9c;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1abc9c, #3498db);
+            color: white;
+            padding: 40px 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        section h2:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #1abc9c;
+            margin: 10px auto 0;
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* What We Do Section */
+        #what-we-do img {
+              max-width: 120%;  /* Adjust this value for image size */
+              width: 800px; /* Explicitly set a larger width for the image */
+              height: auto;    /* Maintain aspect ratio */
+              display: block;  /* Ensure the image is treated as a block element */
+              margin: 40px auto;  /* Center the image horizontally and add some top/bottom margin */
+              border-radius: 10px;
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s ease;
+        }
+
+        #what-we-do img:hover {
+            transform: scale(1.00);
+        }
+
+        /* Technologies Section */
+        #technologies ul {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        #technologies ul li {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s ease;
+            font-size: 1.5em; /* Increased font size */
+        }
+
+        #technologies ul li:hover {
+            transform: translateY(-5px);
+        }
+        
+      #technologies img {
+          max-width: 80%; /* Adjust image size */
+          width: 1000px; /* Explicitly set a larger width for the image */
+          height: auto;
+          display: block;
+          margin: 40px auto; /* Center the image */
+          border-radius: 10px; /* Optional: Rounded corners */
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a polished look */
+          transition: transform 0.3s ease;
+      }
+      
+      #technologies img:hover {
+          transform: scale(1.00); /* Slight enlarge effect on hover */
+      }
+
+        /* Discovery Pipeline Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        table, th, td {
+            border: none;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            background-color: #f9f9fb;
+            color: #2c3e50;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+        
+        /* Each team member takes up 30% of the row to allow 3 per row */
+        /* Flex container for team members */
+        #team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Adjusts the space between team members */
+        }
+        
+        /* Each team member takes up 30% of the row to allow 3 per row */
+        .team-member {
+            background-color: #fff;
+            flex: 0 1 33%; /* 33.33% width minus the gap */
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        /* Style for the team member headshots */
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Text styles */
+        .team-member h3 {
+            font-size: 1.8em;
+            color: #2980b9;
+        }
+        
+        .team-member p {
+            font-size: 1em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #f1c40f;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>AI Program for Drug Discovery</h1>
+        <p>Democratize AI-based drug discovery in academia</p>
+    </header>
+
+    <!-- What We Do Section -->
+    <section id="what-we-do">
+        <h2>What We Do</h2>
+        <p>The mission of AID at Michigan State University (MSU) is to build a collaboration of AI, big data and the local drug discovery community, train the next generation of scientists with specialized expertise, and ultimately evolve into a sustainable research and education program. To achieve research excellence, AID leverages emerging big data (e.g., single cell and spatial transcriptomics, electronic health records), state-of-the-art AI methods (e.g., graph neural network, transfer learning, deep reinforcement learning), and advanced preclinical models (e.g., ex vivo tissue slice culture, organoids). AID takes a novel, previously unexplored patient-centric approach where drugs are proposed based on the RNA features derived from patients and are subsequently validated in the models derived from patient tissues. AID supports the repurposing of existing drugs for new indications in order to expedite the discovery and approval process, as well as the discovery of novel compounds, which may take more time but offer new therapeutic approaches and intellectual property. One key competency for AID is its unique transcriptomics-based drug discovery platform developed by our team members. </p>
+        <img src="fig1.jpg" alt="RNA-Based Drug Discovery Platform">
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies">
+        <h2>How We Make Discovery</h2>
+        <ul>
+            <li><a href="http://apps.octad.org/" target="_blank">Transcriptomics-based drug discovery platform</a></li>
+            <li><a href="https://drugdiscovery.msu.edu/" target="_blank">MSU drug discovery program</a></li>
+        </ul>
+      <img src="fig2.jpg" alt="Technologies Visual">
+      <p>*IPF is used as an example.</p>
+    </section>
+
+    <!-- Discovery Pipeline Section -->
+    <section id="discovery-pipeline">
+        <h2>Drug Discovery Pipeline</h2>
+        <table>
+            <tr>
+                <th>Indication</th>
+                <th>Lead Investigators</th>
+                <th>Status</th>
+                <th>Goal</th>
+            </tr>
+            <tr>
+                <td>HCC</td>
+                <td>Samuel So / Mei-Sze Chua (Stanford)</td>
+                <td>Graduated</td>
+                <td>Novel</td>
+            </tr>
+            <tr>
+                <td>DIPG</td>
+                <td>Rintaro Hashizume (UAB)</td>
+                <td>PK/In Vivo</td>
+                <td>Novel</td>
+            </tr>
+            <tr>
+                <td>IPF</td>
+                <td>Xiaopeng Li (MSU), Reda Girgis (Corewell)</td>
+                <td>Lead Optimization</td>
+                <td>Repurposing/Novel</td>
+            </tr>
+            <tr>
+                <td>Prostate cancer bone metastasis</td>
+                <td>Xiaohong Li (Utoledo)</td>
+                <td>In vivo</td>
+                <td>Novel</td>
+            </tr>
+            <tr>
+                <td>Mesenchymal stem cell dedifferentiation</td>
+                <td>Ling Huang (HFH)</td>
+                <td>In vitro</td>
+                <td>Repurposing</td>
+            </tr>
+            <tr>
+                <td>Endometriosis</td>
+                <td>Asgi Fazleabas (MSU)</td>
+                <td>In vitro</td>
+                <td>Repurposing</td>
+            </tr>
+            <tr>
+                <td>AML</td>
+                <td>Sachi Horibata (MSU)</td>
+                <td>In vitro</td>
+                <td>Repurposing</td>
+            </tr>   
+            <tr>
+                <td>Alzheimer’s disease</td>
+                <td>Dave Morgan (MSU)</td>
+                <td>In silico</td>
+                <td>Repurposing</td>
+            </tr>
+            <tr>
+                <td>Pediatric MODS</td>
+                <td>Surender Rajasekaran (Corewell)</td>
+                <td>Signature discovery</td>
+                <td>Repurposing</td>
+            </tr>
+            <tr>
+                <td>Cardiogenic shock</td>
+                <td>Brian Trethowan/Renzo Loyaga Rendon (Corewell)</td>
+                <td>Signature discovery</td>
+                <td>Repurposing</td>
+            </tr>  
+            <tr>
+                <td>KRAS inhibitor</td>
+                <td>Ling Huang (HFH)</td>
+                <td>Signature discovery</td>
+                <td>Novel</td>
+            </tr>              
+        </table>
+      <p>*Status: Signature discovery --> In silico --> In vitro --> Lead optimization --> PK --> In vivo --> Graduated</p>
+
+    </section>
+
+    <!-- Team Section -->
+<!-- Team Section -->
+<section id="team">
+    <h2>Core Team</h2>
+    
+    <!-- Flex container for the team members -->
+    <div id="team-members">
+        <div class="team-member">
+            <img src="headshot-bin.jpg" alt="Bin Chen">
+            <h3><a href="http://binchenlab.org/" target="_blank">Bin Chen, PhD</a></h3>
+            <p>PI | AI Drug Discovery | Experiences at Stanford, UCSF, Novartis, Pfizer, and Merck</p>
+        </div>
+        <div class="team-member">
+            <img src="headshot-edmund.jpg" alt="Edmund Ellsworth">
+            <h3><a href="https://phmtox.msu.edu/people/ellswo59" target="_blank">Edmund Ellsworth, PhD</a></h3>
+            <p>co-PI | Medicinal Chemistry | Co-Director of Drug Discovery Program at MSU</p>
+        </div>
+        <div class="team-member">
+            <img src="headshot-rick.jpg" alt="Rick Neubig">
+            <h3><a href="https://phmtox.msu.edu/people/rneubig" target="_blank">Rick Neubig, MD,PhD</a></h3>
+            <p>co-PI | Drug Discovery | Director of Drug Discovery Program at MSU (Emeritus)</p>
+        </div>
+        <div class="team-member">
+            <img src="headshot-jiayu.jpg" alt="Jiayu Zhou">
+            <h3><a href="https://jiayuzhou.github.io/" target="_blank">Jiayu Zhou, PhD</a></h3>
+            <p>co-PI | AI Research & Education | Computer Science and Engineering</p>
+        </div>
+        <div class="team-member">
+            <img src="headshot-yuehua.jpg" alt="Yuehua Cui">
+            <h3><a href="https://www.stt.msu.edu/~cui/" target="_blank">Yuehua Cui, PhD</a></h3>
+            <p>co-PI | AI Research & Education | Statistics and Probability</p>
+        </div>        
+        <div class="team-member">
+            <img src="headshot-dmitry.jpg" alt="Dmitry Leshchiner">
+            <h3>Dmitry Leshchiner, MD</h3>
+            <p>Lead | AI Drug Discovery</p>
+        </div>           
+        <!-- Add more team members as needed -->
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 AID Program for Drug Discovery at Michigan State University (MSU) is Supported by the MSU SPG grant. All rights reserved.</p>
+        <p>The webpage is generated by ChatGPT</p>
+    </footer>
+</body>
+</html>
