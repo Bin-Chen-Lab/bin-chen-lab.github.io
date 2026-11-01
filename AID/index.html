@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AI Group for Drug Discovery</title>
+    <title>Center for AI-Enabled Drug Discovery (AID)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -30,18 +37,34 @@
             color: #1abc9c;
         }
 
+        /* Top bar linking back to the lab site */
+        .topbar {
+            background-color: #2c3e50;
+            padding: 10px 20px;
+            font-size: 0.95em;
+        }
+
+        .topbar a {
+            color: #fff;
+        }
+
+        .topbar a:hover {
+            color: #1abc9c;
+        }
+
         /* Header Styles */
         header {
             background: linear-gradient(135deg, #1abc9c, #3498db);
             color: white;
-            padding: 40px 10px;
+            padding: 40px 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            color: white;
+            font-size: 2.6em;
+            margin: 0 0 10px;
         }
 
         header p {
@@ -59,11 +82,10 @@
         }
 
         section h2 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #2c3e50;
             text-align: center;
             margin-bottom: 20px;
-            position: relative;
         }
 
         section h2:after {
@@ -78,84 +100,71 @@
         section p {
             font-size: 1.1em;
             line-height: 1.8;
-            color: #666;
+            color: #555;
         }
 
-        /* What We Do Section */
-        #what-we-do img {
-              max-width: 120%;  /* Adjust this value for image size */
-              width: 800px; /* Explicitly set a larger width for the image */
-              height: auto;    /* Maintain aspect ratio */
-              display: block;  /* Ensure the image is treated as a block element */
-              margin: 40px auto;  /* Center the image horizontally and add some top/bottom margin */
-              border-radius: 10px;
-              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-              transition: transform 0.3s ease;
+        .note {
+            font-size: 0.95em;
+            color: #777;
+            text-align: center;
         }
 
-        #what-we-do img:hover {
-            transform: scale(1.00);
+        /* Figures: same treatment for both, never wider than the page */
+        .figure {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            margin: 30px auto 10px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
 
         /* Technologies Section */
-        #technologies ul {
+        .platforms {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 20px;
             padding-left: 0;
             list-style-type: none;
         }
 
-        #technologies ul li {
+        .platforms li {
             background-color: #ecf0f1;
             padding: 20px;
-            margin: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            width: 30%;
+            flex: 0 1 380px;
             text-align: center;
+            font-size: 1.3em;
             transition: transform 0.3s ease;
-            font-size: 1.5em; /* Increased font size */
         }
 
-        #technologies ul li:hover {
+        .platforms li:hover {
             transform: translateY(-5px);
         }
-        
-      #technologies img {
-          max-width: 80%; /* Adjust image size */
-          width: 1000px; /* Explicitly set a larger width for the image */
-          height: auto;
-          display: block;
-          margin: 40px auto; /* Center the image */
-          border-radius: 10px; /* Optional: Rounded corners */
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a polished look */
-          transition: transform 0.3s ease;
-      }
-      
-      #technologies img:hover {
-          transform: scale(1.00); /* Slight enlarge effect on hover */
-      }
 
         /* Discovery Pipeline Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 40px;
+        .table-wrap {
+            overflow-x: auto;
+            margin-top: 30px;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
-        table, th, td {
-            border: none;
+        table {
+            width: 100%;
+            min-width: 760px;
+            border-collapse: collapse;
         }
 
         th, td {
-            padding: 15px;
+            padding: 14px 15px;
             text-align: left;
-            background-color: #f9f9fb;
             color: #2c3e50;
+            border: none;
         }
 
         th {
@@ -163,64 +172,83 @@
             color: white;
         }
 
-        tr:nth-child(even) {
+        tr:nth-child(odd) td {
+            background-color: #fff;
+        }
+
+        tr:nth-child(even) td {
             background-color: #ecf0f1;
         }
-        
-        /* Each team member takes up 30% of the row to allow 3 per row */
-        /* Flex container for team members */
+
+        /* Team: 3 cards per row on desktop, fewer on narrow screens */
         #team-members {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px; /* Adjusts the space between team members */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
-        
-        /* Each team member takes up 30% of the row to allow 3 per row */
+
         .team-member {
             background-color: #fff;
-            flex: 0 1 33%; /* 33.33% width minus the gap */
-            padding: 30px;
-            margin: 20px 0;
+            padding: 30px 24px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
-        
-        /* Style for the team member headshots */
+
         .team-member img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center top;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member img:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Text styles */
-        .team-member h3 {
-            font-size: 1.8em;
-            color: #2980b9;
-        }
-        
-        .team-member p {
-            font-size: 1em;
-            color: #666;
-            margin-top: 10px;
+            margin-bottom: 15px;
         }
 
+        .team-member h3 {
+            font-size: 1.4em;
+            margin: 0 0 10px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
+            margin: 0;
+        }
+
+        .team-member .role {
+            font-weight: 500;
+            color: #1abc9c;
+        }
+
+        /* Publications: one format for every entry */
+        .pubs {
+            padding-left: 20px;
+        }
+
+        .pubs li {
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .pubs .pub-title {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        section h2.pub-heading {
+            font-size: 1.6em;
+            margin-top: 40px;
+        }
 
         /* Footer Styles */
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
             margin-top: 60px;
         }
 
@@ -232,203 +260,222 @@
             margin: 5px 0;
         }
 
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.9em;
+            }
+
+            section h2 {
+                font-size: 1.7em;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="topbar"><a href="../index.html">&larr; Bin Chen Lab</a></div>
+
     <!-- Header Section -->
     <header>
         <h1>Center for AI-Enabled Drug Discovery (AID)</h1>
-        <p>Democratize AI-based drug discovery in academia</p>
+        <p>Democratizing AI-based drug discovery in academia</p>
     </header>
 
     <!-- What We Do Section -->
     <section id="what-we-do">
         <h2>What We Do</h2>
-        <p>The mission of AID in the College of Human Medicine at Michigan State University (MSU) is to build a collaboration of AI, big data and the local drug discovery community, train the next generation of scientists with specialized expertise, and ultimately evolve into a sustainable research and education program. To achieve research excellence, AID leverages emerging big data (e.g., single cell and spatial transcriptomics, electronic health records), state-of-the-art AI methods (e.g., graph neural network, transfer learning, deep reinforcement learning), and advanced preclinical models (e.g., ex vivo tissue slice culture, organoids). AID takes a novel, previously unexplored patient-centric approach where drugs are proposed based on the RNA features derived from patients and are subsequently validated in the models derived from patient tissues. AID supports the repurposing of existing drugs for new indications in order to expedite the discovery and approval process, as well as the discovery of novel compounds, which may take more time but offer new therapeutic approaches and intellectual property. One key competency for AID is its unique transcriptomics-based drug discovery platform developed by our team members. </p>
-        <img src="fig1.jpg" alt="RNA-Based Drug Discovery Platform">
+        <p>The mission of AID in the College of Human Medicine at Michigan State University (MSU) is to bring together AI, big data, and the local drug discovery community; to train the next generation of scientists with specialized expertise; and ultimately to grow into a sustainable research and education program.</p>
+        <p>To achieve research excellence, AID leverages emerging big data (e.g., single-cell and spatial transcriptomics, electronic health records), state-of-the-art AI methods (e.g., graph neural networks, transfer learning, deep reinforcement learning), and advanced preclinical models (e.g., ex vivo tissue slice cultures, organoids). AID takes a novel, patient-centric approach: drugs are proposed based on RNA features derived from patients and then validated in models derived from patient tissues.</p>
+        <p>AID supports both the repurposing of existing drugs for new indications, which can speed up discovery and approval, and the discovery of novel compounds, which takes longer but offers new therapeutic approaches and intellectual property. A key strength of AID is its unique transcriptomics-based drug discovery platform, developed by our team members.</p>
+        <img class="figure" src="fig1.jpg" alt="RNA-based drug discovery platform">
     </section>
 
     <!-- Technologies Section -->
     <section id="technologies">
-        <h2>How We Make Discovery</h2>
-        <ul>
+        <h2>How We Make Discoveries</h2>
+        <ul class="platforms">
             <li><a href="http://apps.octad.org/" target="_blank">Transcriptomics-based drug discovery platform</a></li>
-            <li><a href="https://drugdiscovery.msu.edu/" target="_blank">MSU drug discovery program</a></li>
+            <li><a href="https://drugdiscovery.msu.edu/" target="_blank">MSU Drug Discovery Program</a></li>
         </ul>
-      <img src="fig2.jpg" alt="Technologies Visual">
-      <p>*IPF is used as an example.</p>
+        <img class="figure" src="fig2.jpg" alt="AID discovery workflow, from patient omics profiling through AI screening, optimization, and in vivo testing">
+        <p class="note">Idiopathic pulmonary fibrosis (IPF) is shown as an example.</p>
     </section>
 
     <!-- Discovery Pipeline Section -->
     <section id="discovery-pipeline">
         <h2>Drug Discovery Pipeline</h2>
-        <table>
-            <tr>
-                <th>Indication</th>
-                <th>Lead Investigators</th>
-                <th>Status</th>
-                <th>Goal</th>
-                <th>Funding</th>
-            </tr>
-            <tr>
-                <td>HCC</td>
-                <td>Samuel So / Mei-Sze Chua (Stanford)</td>
-                <td>Graduated</td>
-                <td>Novel</td>
-                <td>NIH R01 GM134307, NIH R01 GM145700 (scored 7%)</td>
-            </tr>
-            <tr>
-                <td>DIPG</td>
-                <td>Rintaro Hashizume (UAB)</td>
-                <td>PK/In vivo</td>
-                <td>Novel</td>
-                <td>NIH R01 GM145700 </td>
-            </tr>
-            <tr>
-                <td>IPF</td>
-                <td>Xiaopeng Li (MSU), Reda Girgis (Corewell)</td>
-                <td>Lead optimization</td>
-                <td>Repurposing/Novel</td>
-                <td>SPG, NIH R61HL177451</td>
-            </tr>
-            <tr>
-                <td>Prostate cancer bone metastasis</td>
-                <td>Xiaohong Li (Utoledo)</td>
-                <td>In vivo</td>
-                <td>Novel</td>
-                <td>DOD HT94252410133, R01CA286189 (5%) </td>
-            </tr>
-            <tr>
-                <td>Mesenchymal stem cell dedifferentiation</td>
-                <td>Ling Huang (HFH)</td>
-                <td>In vitro</td>
-                <td>Repurposing</td>
-                <td>SPG</td>
-            </tr>
-            <tr>
-                <td>Endometriosis</td>
-                <td>Asgi Fazleabas (MSU)</td>
-                <td>In vitro</td>
-                <td>Repurposing</td>
-                <td>R01 pending (4%)</td>
-            </tr>
-            <tr>
-                <td>AML</td>
-                <td>Sachi Horibata (MSU)</td>
-                <td>In vitro</td>
-                <td>Repurposing</td>
-                <td>Foundation, Startup</td>
-            </tr>   
-            <tr>
-                <td>Alzheimer’s disease</td>
-                <td>Dave Morgan (MSU)</td>
-                <td>In silico</td>
-                <td>Repurposing</td>
-                <td>R01 submitted</td>
-            </tr>
-            <tr>
-                <td>Pediatric MODS</td>
-                <td>Surender Rajasekaran (Corewell)</td>
-                <td>Signature discovery</td>
-                <td>Repurposing</td>
-                <td>NIH R01 GM134307, NIH K99HD111575</td>
-            </tr>
-            <tr>
-                <td>Cardiogenic shock</td>
-                <td>Brian Trethowan/Renzo Loyaga Rendon (Corewell)</td>
-                <td>Signature discovery</td>
-                <td>Repurposing</td>
-                <td>Corewell-MSU Alliance</td>
-            </tr>  
-            <tr>
-                <td>Uterine fibroids</td>
-                <td>Emmanuel Paul  (MSU)</td>
-                <td>Signature discovery</td>
-                <td>Novel</td>
-                <td>NIH K99HD112539</td>
-            </tr>      
-             <tr>
-                <td>YAP inhibitor combination</td>
-                <td>Xin Chen (Uni. of Hawaii), Xu Wu (Harvard)</td>
-                <td>In vitro</td>
-                <td>Repurposing</td>
-                <td>R01 submitted</td>
-            </tr>    
-        </table>
-      <p>*Status: Signature discovery --> In silico --> In vitro --> Lead optimization --> PK --> In vivo --> Graduated</p>
-
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Indication</th>
+                    <th>Lead investigators</th>
+                    <th>Status</th>
+                    <th>Goal</th>
+                    <th>Funding</th>
+                </tr>
+                <tr>
+                    <td>HCC</td>
+                    <td>Samuel So, Mei-Sze Chua (Stanford)</td>
+                    <td>Graduated</td>
+                    <td>Novel</td>
+                    <td>NIH R01 GM134307; NIH R01 GM145700 (scored 7%)</td>
+                </tr>
+                <tr>
+                    <td>DIPG</td>
+                    <td>Rintaro Hashizume (UAB)</td>
+                    <td>PK / In vivo</td>
+                    <td>Novel</td>
+                    <td>NIH R01 GM145700</td>
+                </tr>
+                <tr>
+                    <td>IPF</td>
+                    <td>Xiaopeng Li (MSU), Reda Girgis (Corewell)</td>
+                    <td>Lead optimization</td>
+                    <td>Repurposing / Novel</td>
+                    <td>SPG; NIH R61 HL177451</td>
+                </tr>
+                <tr>
+                    <td>Prostate cancer bone metastasis</td>
+                    <td>Xiaohong Li (University of Toledo)</td>
+                    <td>In vivo</td>
+                    <td>Novel</td>
+                    <td>DoD HT94252410133; NIH R01 CA286189 (scored 5%)</td>
+                </tr>
+                <tr>
+                    <td>Mesenchymal stem cell dedifferentiation</td>
+                    <td>Ling Huang (HFH)</td>
+                    <td>In vitro</td>
+                    <td>Repurposing</td>
+                    <td>SPG</td>
+                </tr>
+                <tr>
+                    <td>Endometriosis</td>
+                    <td>Asgi Fazleabas (MSU)</td>
+                    <td>In vitro</td>
+                    <td>Repurposing</td>
+                    <td>NIH R01 pending (scored 4%)</td>
+                </tr>
+                <tr>
+                    <td>AML</td>
+                    <td>Sachi Horibata (MSU)</td>
+                    <td>In vitro</td>
+                    <td>Repurposing</td>
+                    <td>Foundation; startup funds</td>
+                </tr>
+                <tr>
+                    <td>Alzheimer's disease</td>
+                    <td>Dave Morgan (MSU)</td>
+                    <td>In silico</td>
+                    <td>Repurposing</td>
+                    <td>NIH R01 submitted</td>
+                </tr>
+                <tr>
+                    <td>Pediatric MODS</td>
+                    <td>Surender Rajasekaran (Corewell)</td>
+                    <td>Signature discovery</td>
+                    <td>Repurposing</td>
+                    <td>NIH R01 GM134307; NIH K99 HD111575</td>
+                </tr>
+                <tr>
+                    <td>Cardiogenic shock</td>
+                    <td>Brian Trethowan, Renzo Loyaga Rendon (Corewell)</td>
+                    <td>Signature discovery</td>
+                    <td>Repurposing</td>
+                    <td>Corewell-MSU Alliance</td>
+                </tr>
+                <tr>
+                    <td>Uterine fibroids</td>
+                    <td>Emmanuel Paul (MSU)</td>
+                    <td>Signature discovery</td>
+                    <td>Novel</td>
+                    <td>NIH K99 HD112539</td>
+                </tr>
+                <tr>
+                    <td>YAP inhibitor combination</td>
+                    <td>Xin Chen (University of Hawaii), Xu Wu (Harvard)</td>
+                    <td>In vitro</td>
+                    <td>Repurposing</td>
+                    <td>NIH R01 submitted</td>
+                </tr>
+            </table>
+        </div>
+        <p class="note">Status stages: Signature discovery &rarr; In silico &rarr; In vitro &rarr; Lead optimization &rarr; PK &rarr; In vivo &rarr; Graduated</p>
     </section>
 
     <!-- Team Section -->
-<!-- Team Section -->
-<section id="team">
-    <h2>Core Team</h2>
-    
-    <!-- Flex container for the team members -->
-    <div id="team-members">
-        <div class="team-member">
-            <img src="headshot-bin.jpg" alt="Bin Chen">
-            <h3><a href="http://binchenlab.org/" target="_blank">Bin Chen, PhD</a></h3>
-            <p>PI | AI Drug Discovery | Work experiences at Stanford, UCSF, Novartis, Pfizer, and Merck</p>
+    <section id="team">
+        <h2>Core Team</h2>
+        <div id="team-members">
+            <div class="team-member">
+                <img src="../fig/binchen.jpg" alt="Bin Chen">
+                <h3><a href="http://binchenlab.org/" target="_blank">Bin Chen, PhD</a></h3>
+                <p class="role">PI &middot; AI Drug Discovery</p>
+                <p>Previously at Stanford, UCSF, Novartis, Pfizer, and Merck</p>
+            </div>
+            <div class="team-member">
+                <img src="headshot-edmund.jpg" alt="Edmund Ellsworth">
+                <h3><a href="https://phmtox.msu.edu/people/ellswo59" target="_blank">Edmund Ellsworth, PhD</a></h3>
+                <p class="role">Co-PI &middot; Medicinal Chemistry</p>
+                <p>Co-Director, MSU Drug Discovery Program</p>
+            </div>
+            <div class="team-member">
+                <img src="headshot-rick.jpg" alt="Rick Neubig">
+                <h3><a href="https://phmtox.msu.edu/people/rneubig" target="_blank">Rick Neubig, MD, PhD</a></h3>
+                <p class="role">Co-PI &middot; Drug Discovery</p>
+                <p>Director Emeritus, MSU Drug Discovery Program</p>
+            </div>
+            <div class="team-member">
+                <img src="headshot-jiayu.jpg" alt="Jiayu Zhou">
+                <h3><a href="https://jiayuzhou.github.io/" target="_blank">Jiayu Zhou, PhD</a></h3>
+                <p class="role">Co-PI &middot; AI Research and Education</p>
+                <p>Computer Science and Engineering</p>
+            </div>
+            <div class="team-member">
+                <img src="headshot-yuehua.jpg" alt="Yuehua Cui">
+                <h3><a href="https://www.stt.msu.edu/~cui/" target="_blank">Yuehua Cui, PhD</a></h3>
+                <p class="role">Co-PI &middot; AI Research and Education</p>
+                <p>Statistics and Probability</p>
+            </div>
+            <div class="team-member">
+                <img src="headshot-dmitry.jpg" alt="Dmitry Leshchiner">
+                <h3>Dmitry Leshchiner, MD</h3>
+                <p class="role">Lead &middot; AI Drug Discovery</p>
+                <p>Postdoctoral scholar, Chen Lab</p>
+            </div>
         </div>
-        <div class="team-member">
-            <img src="headshot-edmund.jpg" alt="Edmund Ellsworth">
-            <h3><a href="https://phmtox.msu.edu/people/ellswo59" target="_blank">Edmund Ellsworth, PhD</a></h3>
-            <p>co-PI | Medicinal Chemistry | Co-Director of Drug Discovery Program at MSU</p>
-        </div>
-        <div class="team-member">
-            <img src="headshot-rick.jpg" alt="Rick Neubig">
-            <h3><a href="https://phmtox.msu.edu/people/rneubig" target="_blank">Rick Neubig, MD,PhD</a></h3>
-            <p>co-PI | Drug Discovery | Director of Drug Discovery Program at MSU (Emeritus)</p>
-        </div>
-        <div class="team-member">
-            <img src="headshot-jiayu.jpg" alt="Jiayu Zhou">
-            <h3><a href="https://jiayuzhou.github.io/" target="_blank">Jiayu Zhou, PhD</a></h3>
-            <p>co-PI | AI Research & Education | Computer Science and Engineering</p>
-        </div>
-        <div class="team-member">
-            <img src="headshot-yuehua.jpg" alt="Yuehua Cui">
-            <h3><a href="https://www.stt.msu.edu/~cui/" target="_blank">Yuehua Cui, PhD</a></h3>
-            <p>co-PI | AI Research & Education | Statistics and Probability</p>
-        </div>        
-        <div class="team-member">
-            <img src="headshot-dmitry.jpg" alt="Dmitry Leshchiner">
-            <h3>Dmitry Leshchiner, MD</h3>
-            <p>Lead | AI Drug Discovery</p>
-        </div>           
-        <!-- Add more team members as needed -->
-    </div>
-</section>
-<section id="publication">
-    
-    <h2>Publications: Data/Model/Tool</h2>
-    <ul>
-        <li>Billy Zeng, <i>OCTAD: an open workplace for virtually screening therapeutics targeting precise cancer patient groups using gene expression features</i>, Nature Protocols, 2020, <a href="https://www.nature.com/articles/s41596-020-00430-z">link</a></li>
-        <li>Mengying Sun, <i>Robust Collaborative Learning with Noisy Labels</i>, ICDM 2020, <a href="https://doi.org/10.48550/arXiv.2012.13670">link</a></li>
-        <li>Mengying Sun, <i>MoCL: Contrastive Learning on Molecular Graphs with Multi-level Domain Knowledge</i>, KDD, 2021, <a href="https://arxiv.org/abs/2106.04509">link</a></li>
-        <li>Mengying Sun, <i>MolSearch: Search-based Multi-objective Molecular Generation and Property Optimization</i>, KDD, 2022, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10097503/">link</a></li>
-        <li>Shan-Ju Yeh, <i>TransCell: In silico Characterization of Genomic Landscape and Cellular Responses by Deep Transfer Learning</i>, Genomics, Proteomics and Bioinformatics, 2023, <a href="https://doi.org/10.1093/gpbjnl/qzad008">link</a></li>
-        <li>Ruoqiao Chen, <i>Imputing abundance of over 2500 surface proteins from single-cell transcriptomes with context-agnostic zero-shot deep ensembles</i>, Cell Systems, 2024, <a href="https://www.sciencedirect.com/science/article/pii/S2405471224002369">link</a></li>
-        <li>Han Meng, <i>AnchorDrug: A system for drug-induced gene expression prediction in new contexts through active learning</i>, International Conference on Data Mining (SDM25), accepted</li>
-        <li>Haohao Su, <i>STANCE: a unified statistical model to detect cell-type-specific spatially variable genes in spatial transcriptomics</i>, Nature Communications, 2025, <a href="https://www.nature.com/articles/s41467-025-57117-w">link</a></li>
-        <li>Tom Hu, <i>Large-Scale Information Retrieval and Correction of Noisy Pharmacogenomic Datasets through Residual Thresholded Deep Matrix Factorization</i>, Briefings in Bioinformatics, 2025, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10723412">link</a></li>
+    </section>
 
-    </ul>
-    
-    <h2>Publications: Discovery</h2>
-    <ul>
-        <li>Sean A Misek, <i>Ibrutinib blocks YAP1 activation and reverses BRAFi resistance in melanoma cells</i>, Molecular Pharmacology, 2022, <a href="https://molpharm.aspetjournals.org/article/S0026-895X(24)01187-8/fulltext">link</a></li>
-        <li>Guisheng Zhao, <i>Reversal of Cancer Gene Expression Identifies Repurposed Drugs for Diffuse Intrinsic Pontine Glioma</i>, Acta Neuropathologica Communications, 2022, <a href="https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-022-01463-z">link</a></li>
-        <li>Jing Xing, <i>Deciphering COVID-19 host transcriptomic complexity and variations for therapeutic discovery against new variants</i>, iScience, 2022, <a href="https://doi.org/10.1016/j.isci.2022.105068">link</a></li>
-        <li>Ruihua Liu, <i>Tumor removal limits prostate cancer cell dissemination in bone and osteoblasts induce cancer cell dormancy through focal adhesion kinase</i>, J Exp Clin Cancer Res, 2023, <a href="https://jeccr.biomedcentral.com/articles/10.1186/s13046-023-02849-0">link</a></li>
-        <li>Rama Shankar, <i>Characterizing immuno-biology at clinical recognition of early multiple organ dysfunction syndrome in pediatric patients using single cell transcriptomics</i>, preprint, <a href="https://doi.org/10.1101/2025.01.02.630924">link</a></li>
-    </ul>
-</section>
+    <!-- Publications Section -->
+    <section id="publication">
+        <h2>Publications</h2>
+
+        <h2 class="pub-heading">Data, Models, and Tools</h2>
+        <ul class="pubs">
+            <li><span class="pub-title">OCTAD: an open workspace for virtually screening therapeutics targeting precise cancer patient groups using gene expression features.</span> Billy Zeng et al. <i>Nature Protocols</i>, 2020. <a href="https://www.nature.com/articles/s41596-020-00430-z" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Robust collaborative learning with noisy labels.</span> Mengying Sun et al. <i>ICDM</i>, 2020. <a href="https://doi.org/10.48550/arXiv.2012.13670" target="_blank">Paper</a></li>
+            <li><span class="pub-title">MoCL: contrastive learning on molecular graphs with multi-level domain knowledge.</span> Mengying Sun et al. <i>KDD</i>, 2021. <a href="https://arxiv.org/abs/2106.04509" target="_blank">Paper</a></li>
+            <li><span class="pub-title">MolSearch: search-based multi-objective molecular generation and property optimization.</span> Mengying Sun et al. <i>KDD</i>, 2022. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10097503/" target="_blank">Paper</a></li>
+            <li><span class="pub-title">TransCell: in silico characterization of genomic landscape and cellular responses by deep transfer learning.</span> Shan-Ju Yeh et al. <i>Genomics, Proteomics &amp; Bioinformatics</i>, 2023. <a href="https://doi.org/10.1093/gpbjnl/qzad008" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Imputing abundance of over 2500 surface proteins from single-cell transcriptomes with context-agnostic zero-shot deep ensembles.</span> Ruoqiao Chen et al. <i>Cell Systems</i>, 2024. <a href="https://www.sciencedirect.com/science/article/pii/S2405471224002369" target="_blank">Paper</a></li>
+            <li><span class="pub-title">AnchorDrug: a system for drug-induced gene expression prediction in new contexts through active learning.</span> Han Meng et al. <i>SIAM International Conference on Data Mining (SDM)</i>, 2025.</li>
+            <li><span class="pub-title">STANCE: a unified statistical model to detect cell-type-specific spatially variable genes in spatial transcriptomics.</span> Haohao Su et al. <i>Nature Communications</i>, 2025. <a href="https://www.nature.com/articles/s41467-025-57117-w" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Large-scale information retrieval and correction of noisy pharmacogenomic datasets through residual thresholded deep matrix factorization.</span> Zhiyue Tom Hu et al. <i>Briefings in Bioinformatics</i>, 2025. <a href="https://doi.org/10.1093/bib/bbaf226" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Deep learning-based screening and design of novel therapeutics that reverse disease-associated transcriptional phenotypes.</span> Jing Xing et al. <i>Cell</i>, 2026. <a href="https://www.cell.com/cell/fulltext/S0092-8674(26)00223-0" target="_blank">Paper</a></li>
+        </ul>
+
+        <h2 class="pub-heading">Discovery</h2>
+        <ul class="pubs">
+            <li><span class="pub-title">Ibrutinib blocks YAP1 activation and reverses BRAFi resistance in melanoma cells.</span> Sean A. Misek et al. <i>Molecular Pharmacology</i>, 2022. <a href="https://molpharm.aspetjournals.org/article/S0026-895X(24)01187-8/fulltext" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Reversal of cancer gene expression identifies repurposed drugs for diffuse intrinsic pontine glioma.</span> Guisheng Zhao et al. <i>Acta Neuropathologica Communications</i>, 2022. <a href="https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-022-01463-z" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Deciphering COVID-19 host transcriptomic complexity and variations for therapeutic discovery against new variants.</span> Jing Xing et al. <i>iScience</i>, 2022. <a href="https://doi.org/10.1016/j.isci.2022.105068" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Tumor removal limits prostate cancer cell dissemination in bone and osteoblasts induce cancer cell dormancy through focal adhesion kinase.</span> Ruihua Liu et al. <i>Journal of Experimental &amp; Clinical Cancer Research</i>, 2023. <a href="https://jeccr.biomedcentral.com/articles/10.1186/s13046-023-02849-0" target="_blank">Paper</a></li>
+            <li><span class="pub-title">Characterizing immuno-biology at clinical recognition of early multiple organ dysfunction syndrome in pediatric patients using single-cell transcriptomics.</span> Rama Shankar et al. <i>bioRxiv</i> (preprint), 2025. <a href="https://doi.org/10.1101/2025.01.02.630924" target="_blank">Paper</a></li>
+        </ul>
+    </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2023 AID Program for Drug Discovery at Michigan State University (MSU) is supported by the MSU SPG grant. All rights reserved.</p>
-        <p>The webpage was generated by ChatGPT</p>
+        <p>&copy; 2023 Center for AI-Enabled Drug Discovery (AID), Michigan State University. Supported by the MSU SPG program.</p>
+        <p>This webpage was generated by ChatGPT.</p>
     </footer>
 </body>
 </html>
