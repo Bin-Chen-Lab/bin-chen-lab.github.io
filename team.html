@@ -6,7 +6,7 @@
     content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Bin Chen Lab</title>
+    <title>Team - Bin Chen Lab</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -25,6 +25,38 @@
     <![endif]-->
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+    <style>
+      /* Team member cards: every headshot is the same size circle */
+      .member {
+        margin-bottom: 40px;
+      }
+      .headshot {
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+      }
+      .headshot-placeholder {
+        background-color: #ddd;
+        color: #666;
+        font-size: 48px;
+        line-height: 150px;
+        text-align: center;
+      }
+      .member .lead {
+        margin-bottom: 5px;
+      }
+      .member .role {
+        color: #555;
+      }
+      .member .author-social {
+        margin-right: 12px;
+        white-space: nowrap;
+      }
+    </style>
   </head><body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -35,17 +67,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Bin Chen Lab @ MSU</a>
+          <a class="navbar-brand" href="./index.html">Bin Chen Lab @ MSU</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
               <a href="./index.html">Home</a>
             </li>
             <li>
               <a href="./research.html">Research</a>
             </li>
-            <li>
+            <li class="active">
               <a href="./team.html">Team</a>
             </li>
             <li>
@@ -65,403 +97,332 @@
         <!--/.nav-collapse -->
       </div>
     </nav>
-    <!-- /.carousel -->
-    <!-- Marketing messaging and featurettes==================================================-
-    ->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-    <!-- /.row -->
-    <!-- START THE FEATURETTES -->
     <div class="container marketing">
-    <hr class="featurette-divider">
-
-       <div class="row featurette">
-           <p></p>
-     <!--      <img class="center-block featurette-image img-responsive" data-src="" alt="Generic placeholder image" src="fig/lab_members_2018.JPG" width="80%">-->
-       </div>
       <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
+
+      <!-- Principal Investigator -->
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/binchen.jpg" alt="Bin Chen">
+        </div>
+        <div class="col-sm-9">
           <p class="lead">Bin Chen, PhD</p>
-            <p>Principal Investigator, Professor (<a href="https://docs.google.com/document/d/1imG5HSxR-2vjt_IsCzUHNS0MC6pjbEqj/edit?usp=sharing&ouid=102821224539905116177&rtpof=true&sd=true">CV</a>)</p>
-            <p>Dept. of Pediatrics and Human Development</p>
-            <p>Dept. of Pharmacology and Toxicology</p>
-            <p>Dept. of Computer Science and Engineering (adjunct)</p>
-            <p>Dept. of Epidemiology and Biostatistics (adjunct)</p>
-            <p>Dept. of Medicine (adjunct)</p>
-          <p>Bin was recruited to MSU through the <a href="https://research.msu.edu/successful-faculty-hiring-initiative-poised-to-make-a-global-impact/" target="_blank">Global Impact Initiative</a>. Prior to this position, Bin was a faculty member (instructor, assistant professor) at UCSF for three years. Bin trained as a chemist in college, worked
-            as a software engineer before graduate school, trained as a chem/bioinformatician
-            in graduate school, worked as a computational scientist at Novartis, Pfizer
-            and Merck. He received his PhD in informatics at Indiana University, Bloomington and pursued his postdoctoral training in Dr. Atul Butte's lab at Stanford University.
-            Bin co-founded <a href="http://dahshu.org/" target="_blank">DahShu</a>, a non-profit organization to promote research and education in data sciences. As a PI, he has received >$7 million research funding.  He has also contributed to a number of big grants (e.g., P01 and U24) as a co-investigator. During weekends, Bin plays soccer or coaches kids to play soccer. </p>
-          <a href="mailto:bin.chen@hc.msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
-            <a href="https://scholar.google.com/citations?user=K7MBJlwAAAAJ&amp;hl=en" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google Scholar</a>
-            <a href="https://www.linkedin.com/in/binchen1" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
-            <a href="https://github.com/Bin-Chen-Lab" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> GitHub</a>
-            <a href="https://twitter.com/DrBinChen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
-        </div>
-        <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/binchen.jpg" width="150">
+          <p class="role">Principal Investigator, Professor (<a href="https://docs.google.com/document/d/1imG5HSxR-2vjt_IsCzUHNS0MC6pjbEqj/edit?usp=sharing&ouid=102821224539905116177&rtpof=true&sd=true">CV</a>)</p>
+          <p>Dept. of Pediatrics and Human Development<br>
+            Dept. of Pharmacology and Toxicology<br>
+            Dept. of Computer Science and Engineering (adjunct)<br>
+            Dept. of Epidemiology and Biostatistics (adjunct)<br>
+            Dept. of Medicine (adjunct)</p>
+          <p>Bin was recruited to MSU through the <a href="https://research.msu.edu/successful-faculty-hiring-initiative-poised-to-make-a-global-impact/" target="_blank">Global Impact Initiative</a>. Before joining MSU, he was a faculty member (instructor, then assistant professor) at UCSF for three years. Bin trained as a chemist in college, worked as a software engineer before graduate school, trained as a chem/bioinformatician in graduate school, and worked as a computational scientist at Novartis, Pfizer, and Merck. He received his PhD in informatics from Indiana University Bloomington and completed his postdoctoral training in Dr. Atul Butte's lab at Stanford University.
+            Bin co-founded <a href="http://dahshu.org/" target="_blank">DahShu</a>, a nonprofit organization that promotes research and education in data science. As a PI, he has received more than $7 million in research funding. He has also contributed to a number of large grants (e.g., P01 and U24) as a co-investigator. On weekends, Bin plays soccer or coaches kids' soccer.</p>
+          <a href="mailto:bin.chen@hc.msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+          <a href="https://scholar.google.com/citations?user=K7MBJlwAAAAJ&amp;hl=en" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google Scholar</a>
+          <a href="https://www.linkedin.com/in/binchen1" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+          <a href="https://github.com/Bin-Chen-Lab" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> GitHub</a>
+          <a href="https://twitter.com/DrBinChen" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
         </div>
       </div>
+
       <hr class="featurette-divider">
 
-                  
-  
-   </div>
-        <p></p> 
-        <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
+      <!-- Current members -->
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/ruoqiao.jpg" alt="Ruoqiao Chen">
+        </div>
+        <div class="col-sm-9">
           <p class="lead">Ruoqiao Chen, BS</p>
-          <p>BMS PhD student (2021-)</p>
-          <p>Ruoqiao received her BS in Medical Science from Huazhong University of Science & Technology in China. Her current research focuses on developing machine learning models to predict surface protein expression and developing foundation models for drug discovery.</p>
-       
-          <a href="mailto:chenruo4@msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
+          <p class="role">BMS PhD student (2021-)</p>
+          <p>Ruoqiao received her BS in Medical Science from Huazhong University of Science and Technology in China. Her current research focuses on developing machine learning models to predict surface protein expression and building foundation models for drug discovery.</p>
+          <a href="mailto:chenruo4@msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
         </div>
-                            
-              <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/ruoqiao.jpg"  width="50%" height="50%">
-        </div>    
-    </div>
-        <p></p> 
-        
+      </div>
 
-        <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/Dmitry.png" alt="Dmitry Leshchiner">
+        </div>
+        <div class="col-sm-9">
           <p class="lead">Dmitry Leshchiner, MD</p>
-          <p>Postdoctoral scholar (2022-)</p>
-          <p>Dmitry Leshchiner received his MD from I.M. Sechenov First Moscow State Medical University and then spent a couple of years at Harvard Medical School as a research associate before pursuing postdoctoral training at Boston College in 2020. In 2022, he joined the Chen lab and Horibata lab. He is interested in utilizing computational tools to discover novel therapeutics.</p>
-       
-          <a href="mailto:leshchi4@msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
+          <p class="role">Postdoctoral scholar (2022-)</p>
+          <p>Dmitry received his MD from I.M. Sechenov First Moscow State Medical University and spent a couple of years at Harvard Medical School as a research associate before starting postdoctoral training at Boston College in 2020. In 2022, he joined the Chen Lab and the Horibata Lab. He is interested in using computational tools to discover novel therapeutics.</p>
+          <a href="mailto:leshchi4@msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
         </div>
-            
-        <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/Dmitry.png"  width="50%" height="60%">
-        </div>  
-            
       </div>
-        <p></p> 
-  
-  
-   
-    
-           
-        <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
+
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/Nabas.jpg" alt="Nabasmita Talukdar">
+        </div>
+        <div class="col-sm-9">
           <p class="lead">Nabasmita Talukdar, MS</p>
-          <p>PhD student in Biostats (2022-)</p>
-           <p>Nabas received her MS in Statistics from Delhi University in India. She is interested in using real-world data to discover better therapeutics.</p>
-          <a href="mailto:talukda1@msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
+          <p class="role">PhD student in Biostatistics (2022-)</p>
+          <p>Nabas received her MS in Statistics from the University of Delhi in India. She is interested in using real-world data to discover better therapeutics.</p>
+          <a href="mailto:talukda1@msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
         </div>
-           <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/Nabas.jpg"  width="60%" height="70%">
-        </div>  
-                        
       </div>
-        <p></p>      
 
-                 <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/shubham.jpg" alt="Shubham Koirala">
+        </div>
+        <div class="col-sm-9">
           <p class="lead">Shubham Koirala, BS</p>
-          <p>PhD student in Genetics and Genome Sciences (2024-)</p>
-          <p>Shubham received his BS in Biotechnology from Kathmandu University, Nepal. He is interested in leveraging machine learning and large-scale transcriptomics to discover new biomarkers for pediatric cancers.</p>
-       
-          <a href="mailto:koiralas@msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
+          <p class="role">PhD student in Genetics and Genome Sciences (2024-)</p>
+          <p>Shubham received his BS in Biotechnology from Kathmandu University in Nepal. He is interested in leveraging machine learning and large-scale transcriptomics to discover new biomarkers for pediatric cancers.</p>
+          <a href="mailto:koiralas@msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
         </div>
-           <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/shubham.jpg"  width="60%" height="70%">
-        </div>  
-       
       </div>
- 
 
-              <p></p> 
-        
-        <div class="row featurette">
-           <div class="col-md-7 col-md-push-3">
-          <p class="lead">Zolt Palmer, BS</p>
-          <p>PhD student in Biochemistry and Molecular Biology (2025-)</p>
-          <p>Zolt received his BS from GVSU. He is interested in systems-based drug discovery.</p>
-          <a href="mailto:palmerzs@msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
-           </div>    
-                                            
-         <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/zsolt.jpg"  width="150" height="150">
-        </div>                                           
-                                            
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/Linqing.png" alt="Linqing Mo">
         </div>
-        
-        <p></p>    
+        <div class="col-sm-9">
+          <p class="lead">Linqing Mo, MS</p>
+          <p class="role">PhD student in Computer Science (2024-), co-advised with Prof. Jiayu Zhou</p>
+          <p>Linqing received his BS in Chemistry from the University of Science and Technology of China and his MS in both Chemistry and Data Science from Michigan State University. He is interested in representation learning for drug discovery.</p>
+          <a href="mailto:molinqin@chemistry.msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+        </div>
+      </div>
 
-        <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
-          <p class="lead">Linqing Mo</p>
-          <p>PhD student in Computer Science (2024-), co-advised with Prof. Jiayu Zhou</p>
-          <p>Linqing received his BS in Chemistry from the University of Science and Technology of China and his MS in both Chemistry and Data Science from Michigan State University. He is interested in representation learning in drug discovery.</p>
-       
-          <a href="mailto:molinqin@chemistry.msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
-        </div>   
-
-        <div class="col-md-3 col-md-pull-7">
-          <img class="center-block featurette-image img-circle img-responsive" data-src="" alt="Generic placeholder image" src="fig/Linqing.png"  width="150" height="150">
-        </div>   
-            
-       <p></p>      
-
-       <div class="row featurette">
-        <div class="col-md-7 col-md-push-3">
+      <div class="row member">
+        <div class="col-sm-3">
+          <div class="headshot headshot-placeholder" role="img" aria-label="Lingxiao Li">LL</div>
+        </div>
+        <div class="col-sm-9">
           <p class="lead">Lingxiao Li, MS</p>
-          <p>PhD student in CS (2024-), advised by Prof. Jiayu Zhou</p>
-          <p>Lingxiao received his MS in Computer Science from Boston University. He closely collaborates with the lab on multimodal generative AI for drug discovery.</p>
-       
-          <a href="mailto:lilingx1@msu.edu" class="author-social" target="_blank">
-            <i class="fa fa-envelope-square"></i>Email</a>
+          <p class="role">PhD student in Computer Science (2024-), advised by Prof. Jiayu Zhou</p>
+          <p>Lingxiao received his MS in Computer Science from Boston University. He collaborates closely with the lab on multimodal generative AI for drug discovery.</p>
+          <a href="mailto:lilingx1@msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
         </div>
+      </div>
 
-       
+      <div class="row member">
+        <div class="col-sm-3">
+          <img class="headshot" src="fig/zsolt.jpg" alt="Zolt Palmer">
+        </div>
+        <div class="col-sm-9">
+          <p class="lead">Zolt Palmer, BS</p>
+          <p class="role">PhD student in Biochemistry and Molecular Biology (2025-)</p>
+          <p>Zolt received his BS from Grand Valley State University (GVSU). He is interested in systems-based drug discovery.</p>
+          <a href="mailto:palmerzs@msu.edu" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+        </div>
       </div>
-            
-      </div>
-        <p></p>    
-      </div>  
-      
-         <hr class="featurette-divider">
-          <div> 
-          <p>We always welcome highly motivated trainees to join the lab. For postdoc candidates, please send your CV and research interests to Dr. Chen. 
-              For graduate students, depending on your interests and backgrounds, please apply through the <a href="https://biomolecular.natsci.msu.edu/" target="_blank">BioMolecular Science program</a>,
-              the <a href="https://ggs.natsci.msu.edu/faculty/" target="_blank">Genetics and Genome Sciences Program</a>, the <a href="https://epibio.msu.edu/academics/biostatistics/" target="_blank">Biostatistics program</a>,
-              or the <a href="https://www.cse.msu.edu/Students/Future_Grad/" target="_blank">Computer Science Program</a>. Feel free to approach Dr. Chen if you plan to apply.
-              Chen lab has the tradition to host high-school summer interns every year. Please contact Dr. Chen before April if you are interested.
-              We occasionally recruit undergraduate and medical students. For all the trainees, before the application, 
-              please ensure you have some experience with programming (R and Python are preferred) and statistics.
-              The Resource page will direct you to some great sources to learn programming and statistics.
-            </p>
-      
-        </div>  
-    
+
+      <hr class="featurette-divider">
+
+      <!-- Joining the lab -->
+      <p class="lead text-primary">Join us</p>
+      <p>We always welcome highly motivated trainees. Postdoc candidates, please send your CV and research interests to Dr. Chen.
+        Graduate students, depending on your interests and background, please apply through the <a href="https://biomolecular.natsci.msu.edu/" target="_blank">BioMolecular Science program</a>,
+        the <a href="https://ggs.natsci.msu.edu/faculty/" target="_blank">Genetics and Genome Sciences program</a>, the <a href="https://epibio.msu.edu/academics/biostatistics/" target="_blank">Biostatistics program</a>,
+        or the <a href="https://www.cse.msu.edu/Students/Future_Grad/" target="_blank">Computer Science program</a>. Feel free to contact Dr. Chen if you plan to apply.</p>
+      <p>The Chen Lab has a tradition of hosting high school summer interns every year. If you are interested, please contact Dr. Chen before April.
+        We occasionally recruit undergraduate and medical students as well.</p>
+      <p>Before applying, all trainees should have some experience with programming (R and Python are preferred) and statistics.
+        Our <a href="./resource.html">Resources</a> page lists some great places to learn programming and statistics.</p>
+
       <hr class="featurette-divider">
       <p class="lead text-primary">Alumni</p>
       <div class="row">
         <div class="col-md-12">
           <table class="table">
-            <tbody>     
-               <tr>
+            <tbody>
+              <tr>
                 <td>Xiaodan Zhang</td>
-                <td>Data Science Specialist, 2022-2026</td>
-                <td>Data Scientist at Bronto Therapeutics</td>
-              </tr>  
-             <tr>
+                <td>Data science specialist, 2022-2026</td>
+                <td>Data scientist at Bronto Therapeutics</td>
+              </tr>
+              <tr>
                 <td>Dimitri Joseph</td>
                 <td>DO/PhD student, 2020-2026</td>
-                <td>back to Medical School</td>
-              </tr>  
-                <tr>
-                <td>Rama Shankar </td>
+                <td>Returned to medical school</td>
+              </tr>
+              <tr>
+                <td>Rama Shankar</td>
                 <td>Postdoc and K99 fellow, 2018-2026</td>
-                <td>Assistant Professor at Loyola University Chicago</td>
-              </tr>  
-               <tr>
+                <td>Assistant professor at Loyola University Chicago</td>
+              </tr>
+              <tr>
                 <td>Shreya Paithankar</td>
                 <td>Lab assistant, 2018-2025</td>
-                <td>Applying PHD</td>
-              </tr>  
-               <tr>
+                <td>Applying to PhD programs</td>
+              </tr>
+              <tr>
                 <td>Sardar Mehtab Bin Murtaza</td>
-                <td>CS/Chemistry undergraduate 2023-2024</td>
+                <td>CS/Chemistry undergraduate, 2023-2024</td>
                 <td>CS PhD student at UC Merced</td>
-              </tr>  
+              </tr>
               <tr>
                 <td>Aakash Dave</td>
-                <td>CHM Medical Student, 2023-2024</td>
-                <td>Medical Student at CHM, MSU</td>
-              </tr>  
-               <tr>
+                <td>CHM medical student, 2023-2024</td>
+                <td>Medical student at CHM, MSU</td>
+              </tr>
+              <tr>
                 <td>Han Meng</td>
                 <td>CS MS student, 2021-2024</td>
-                <td>CS PhD student at William & Mary</td>
-              </tr>  
-               <tr>
+                <td>CS PhD student at William &amp; Mary</td>
+              </tr>
+              <tr>
                 <td>Jing Xing</td>
                 <td>Postdoc, 2018-2022</td>
                 <td>Young PI at Shanghai Institute of Materia Medica, Chinese Academy of Sciences</td>
-              </tr>  
-               <tr>
+              </tr>
+              <tr>
                 <td>Jeremy Haskins</td>
                 <td>Part-time technician, 2020-2022</td>
-                <td>Senior Scientist at Altay Therapeutics</td>
-              </tr>  
-               <tr>
+                <td>Senior scientist at Altay Therapeutics</td>
+              </tr>
+              <tr>
                 <td>Mengying Sun</td>
                 <td>CS PhD student, 2019-2022, co-advised by Prof. Jiayu Zhou</td>
-                <td>Data Scientist, Facebook(Meta)</td>
-              </tr>        
-               <tr>
+                <td>Data scientist at Facebook (Meta)</td>
+              </tr>
+              <tr>
                 <td>Ke Liu</td>
-                <td>Postdoc, 2017-2021, Research Assistant Professor 2021-2022</td>
-                <td>Assistant Professor, Qilu Scholar, Shandong University</td>
-              </tr> 
-               <tr>
+                <td>Postdoc, 2017-2021; research assistant professor, 2021-2022</td>
+                <td>Assistant professor and Qilu Scholar at Shandong University</td>
+              </tr>
+              <tr>
                 <td>Eugene Chekalin</td>
                 <td>Postdoc, 2019-2021</td>
                 <td>Senior computational biologist at Illumina</td>
-              </tr>        
-                 <tr>
+              </tr>
+              <tr>
                 <td>Austin VanVelsen</td>
                 <td>Medical student, 2020-2021</td>
                 <td>Medical student at CHM, MSU</td>
-              </tr>  
-                 <tr>
+              </tr>
+              <tr>
                 <td>Tyler VanVelsen</td>
                 <td>Medical student, 2020-2021</td>
                 <td>Medical student at CHM, MSU</td>
-              </tr>  
-               <tr>
+              </tr>
+              <tr>
                 <td>Jeanne Yang</td>
                 <td>Summer intern, 2021</td>
                 <td>Undergraduate at UM</td>
-              </tr>  
-                <tr>
+              </tr>
+              <tr>
                 <td>Shan-Ju Yeh</td>
-                <td>Visiting Scholar, 2019-2020</td>
-                <td>PhD student and then professor at Taiwan National Tsinghua University</td>
-              </tr>    
-    
-               <tr>
+                <td>Visiting scholar, 2019-2020</td>
+                <td>PhD student, then professor at National Tsing Hua University, Taiwan</td>
+              </tr>
+              <tr>
                 <td>Christopher Chang</td>
                 <td>Capstone student, 2019-2020</td>
                 <td>Medical student at COM</td>
               </tr>
-                
-               <tr>
+              <tr>
                 <td>Krista Young</td>
-                <td>Capstone, 2019-2020</td>
+                <td>Capstone student, 2019-2020</td>
                 <td>Medical student at COM</td>
               </tr>
-                
-                <tr>
+              <tr>
                 <td>Xiangyu Chen</td>
-                <td>High-school summer intern, 2020</td>
+                <td>High school summer intern, 2020</td>
                 <td>East Grand Rapids High School, admitted to UPenn</td>
               </tr>
-                
-               <tr>
+              <tr>
                 <td>Yingying Wu</td>
                 <td>Postdoc, 2019</td>
-                <td>Postdoc at Harvard, then AP at University of Houston</td>
-              </tr>        
-                
-               <tr>
+                <td>Postdoc at Harvard, then assistant professor at the University of Houston</td>
+              </tr>
+              <tr>
                 <td>Rae Felismino</td>
                 <td>Capstone student, 2019</td>
                 <td>Medical student at COM</td>
               </tr>
-                
-                <tr>
+              <tr>
                 <td>Cathy Lee</td>
                 <td>Capstone student, 2019</td>
                 <td>Medical student at COM</td>
               </tr>
-               <tr>
+              <tr>
                 <td>Suchir Gupta</td>
-                <td>High-school summer intern, 2019</td>
+                <td>High school summer intern, 2019</td>
                 <td>Grand Rapids Central High School, then admitted to UM</td>
               </tr>
- 
-               <tr>
+              <tr>
                 <td>Billy Zeng</td>
-                <td>UCSF medical student, 2017-2019 </td>
+                <td>UCSF medical student, 2017-2019</td>
                 <td>UCSF medical student</td>
               </tr>
-                
-                <tr>
+              <tr>
                 <td>Albert Jiao</td>
                 <td>Medical student, 2018</td>
-                <td>Matched Radiology at Harvard</td>
+                <td>Matched into radiology at Harvard</td>
               </tr>
- 
-               <tr>
+              <tr>
                 <td>Kasim Fassia</td>
                 <td>Medical student, 2018</td>
                 <td>Medical student at MSU</td>
               </tr>
-                
-                 <tr>
+              <tr>
                 <td>Patrick Newbury, MD</td>
                 <td>Postdoc, 2018-2019</td>
-                <td>Radiation oncology resident at University of Oklahoma</td>
+                <td>Radiation oncology resident at the University of Oklahoma</td>
               </tr>
-                
-                
-               <tr>
+              <tr>
                 <td>Anthony Sciarini</td>
-                <td>Intern from GVSU, 2018 summer and fall</td>
+                <td>Intern from GVSU, summer and fall 2018</td>
                 <td>GVSU undergraduate</td>
               </tr>
-                
-                <tr>
+              <tr>
                 <td>Keith Schmitt</td>
-                <td>Intern from GVSU, 2018 summer and fall</td>
+                <td>Intern from GVSU, summer and fall 2018</td>
                 <td>GVSU undergraduate</td>
               </tr>
-                
-               <tr>
+              <tr>
                 <td>Anita Wen</td>
                 <td>Summer intern from UC Davis, 2018</td>
                 <td>UC Davis</td>
               </tr>
-                
-               <tr>
-                   <td><b>Before we moved to MSU in 2018</b></td>
-              </tr>    
-                
-               <tr>
+              <tr>
+                <td colspan="3"><b>Before we moved to MSU in 2018</b></td>
+              </tr>
+              <tr>
                 <td>Jordan Spatz</td>
                 <td>Medical student</td>
                 <td>UCSF</td>
               </tr>
-                <tr>
+              <tr>
                 <td>Michael F. Sharpnack</td>
                 <td>Medical student, volunteer</td>
                 <td>Ohio State University</td>
               </tr>
-            <tr>
+              <tr>
                 <td>Reuben Sarwal</td>
-                <td>Summary Intern</td>
+                <td>Summer intern</td>
                 <td>Undergraduate, UC Berkeley</td>
               </tr>
               <tr>
                 <td>Tanisha Joshi</td>
-                <td>Summary Intern</td>
+                <td>Summer intern</td>
                 <td>High school</td>
               </tr>
               <tr>
                 <td>Jane Wei</td>
-                <td>Summary Intern</td>
+                <td>Summer intern</td>
                 <td>Undergraduate, Cornell University</td>
               </tr>
               <tr>
                 <td>Rachel (Menghua) Wu</td>
-                <td>Summary Intern</td>
+                <td>Summer intern</td>
                 <td>High school, accepted into MIT</td>
               </tr>
               <tr>
                 <td>Charles Pei</td>
-                <td>Summary Intern</td>
-                <td>High school, accepted into Harvard, co-mentored by Marina Sirota</td>
+                <td>Summer intern, co-mentored by Marina Sirota</td>
+                <td>High school, accepted into Harvard</td>
               </tr>
             </tbody>
           </table>
         </div>
-       
-      <!-- /END THE FEATURETTES -->
+      </div>
+
       <!-- FOOTER -->
-      <!-- Three columns of text below the carousel -->
       <hr class="featurette-divider">
       <footer>
         <p></p>
@@ -472,21 +433,15 @@
               <a href="https://www.msu.edu/" target="_blank">Michigan State University</a>
             </p>
       </footer>
-      <!-- /.container -->
-      <!-- Bootstrap core JavaScript==================================================-
-      ->
+    </div>
+    <!-- /.container -->
     <!-- Placed at the end of the document so the pages load faster -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script>
         window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
       </script>
       <script src="dist/js/bootstrap.min.js"></script>
-      <!-- Just to make our placeholder images work. Don't actually
-      copy the next line! -->
-      <script src="assets/js/vendor/holder.min.js"></script>
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
       <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    </div>
-  
 
 </body></html>
