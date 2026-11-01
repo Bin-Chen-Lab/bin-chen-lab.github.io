@@ -6,7 +6,7 @@
     content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Bin Chen Lab</title>
+    <title>Research - Bin Chen Lab</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -24,6 +24,31 @@
     <![endif]-->
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+    <style>
+      /* Research sections: every figure sits in the same fixed frame */
+      .research-figure {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 20px;
+      }
+      .research-figure img {
+        width: 100%;
+        aspect-ratio: 6 / 5;
+        object-fit: contain;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        padding: 6px;
+      }
+      .research-figure .caption {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        color: #777;
+        text-align: center;
+      }
+    </style>
   </head><body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -34,14 +59,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Bin Chen Lab @ MSU</a>
+          <a class="navbar-brand" href="./index.html">Bin Chen Lab @ MSU</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
               <a href="./index.html">Home</a>
             </li>
-            <li>
+            <li class="active">
               <a href="./research.html">Research</a>
             </li>
             <li>
@@ -64,91 +89,92 @@
         <!--/.nav-collapse -->
       </div>
     </nav>
-    <!-- /.carousel -->
-    <!-- Marketing messaging and featurettes==================================================-
-    ->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-    <!-- /.row -->
-    <!-- START THE FEATURETTES -->
     <div class="container marketing">
       <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-8 col-md-push-3">
+
+      <!-- 1. OMICS-based drug discovery -->
+      <div class="row">
+        <div class="col-sm-4">
+          <a class="research-figure" href="fig/lab_research1.png" target="_blank">
+            <img src="fig/lab_research1.png" alt="Overview of the OCTAD drug discovery platform">
+            <span class="caption">Click to enlarge</span>
+          </a>
+        </div>
+        <div class="col-sm-8">
           <p class="lead">OMICS-based drug discovery</p>
- <p>Conventional drug discovery focuses on finding agents that modulate a molecular feature (mostly a protein target). This approach was adopted a few decades ago,
-     even before the emergence of omics technologies. Today’s technologies allow the profiling of thousands of molecular features including proteins, mRNAs, and 
-     metabolites, all of which can contribute to disease development. Finding one magic bullet from these thousands of features is challenging. Moreover,
-     focusing only on a single feature does not fully utilize all the information generated from new omics technologies. We employed a systems approach that 
-     considers how drugs affect a disease gene expression signature (comprised of a set of up-/down-regulated disease genes).  This approach led to the discovery of 
-     therapeutic candidates for <a href="http://www.gastrojournal.org/article/S0016-5085(17)30264-0/abstract" target="_blank">hepatocellular carcinoma 
-     (HCC)</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/27863422" target="_blank">Ewing sarcoma</a>,
-     <a href="http://www.ncbi.nlm.nih.gov/pubmed/29093271" target="_blank">basal cell carcinoma</a>, 
-     <a href="https://molpharm.aspetjournals.org/content/101/1/1" target="_blank">melanoma</a>, 
-       <a href="https://www.nature.com/articles/s43587-021-00122-7" target="_blank">Alzheimer’s disease</a>, 
-            <a href="https://doi.org/10.1186/s40478-022-01463-z" target="_blank">DIPG (Diffuse intrinsic pontine glioma)</a>, 
-                 <a href="https://link.springer.com/article/10.1186/s13046-023-02849-0" target="_blank">prostate cancer bone metastasis</a>, 
-       and <a href="https://www.cell.com/iscience/fulltext/S2589-0042(22)01340-2" target="_blank">SARS-CoV-2</a>. Moreover, we discovered that the potency to reverse gene expression 
-         correlates with drug efficacy, providing strong evidence of using this approach in drug repurposing (<a href="https://www.nature.com/articles/ncomms16022" target="_blank">Chen, Nature Communications, 2017</a>). 
-     We developed a drug-repurposing platform called <a href="http://octad.org/" target="_blank">OCTAD </a> (<a href="https://www.nature.com/articles/s41596-020-00430-z" target="_blank">Zeng, Nature Protocols, 2021 </a>), allowing researchers to predict repurposed drug candidates for cancers and cancer subtypes. 
-
-<p>We actively develop new methods to support novel compound screening and lead optimization. Our recent conference papers have demonstrated the feasibility through improving the training data quality (<a href="https://arxiv.org/abs/2012.13670" target="_blank">Sun, ICDM, 2020</a>),  pre-training graph 
-    neural network (<a href="https://arxiv.org/abs/2106.04509" target="_blank">Sun, KDD, 2021</a>) and tree search based multi-objective optimization  (<a href="https://dl.acm.org/doi/10.1145/3534678.3542676" target="_blank">Sun, KDD, 2022</a>). 
-    Now our model can quickly predict novel compounds based on disease gene expression 
-    profiles. The lab has set up a bench to validate new candidates for multiple diseases including HCC, diffuse intrinsic pontine glioma (DIPG), and SARS-CoV-2. 
-
-<p>With the emergence of single-cell RNASeq data, we apply this approach to identify compounds that could control cell lineage development
-    or modulate the microenvironment. This approach also holds great promise for identifying novel inhibitors for undruggable targets. 
-    On the technical side, we develop methods to support de novo drug design using advanced machine learning. 
-
-        </div>
-        <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/lab_research1.png">
+          <p>Conventional drug discovery focuses on finding agents that modulate a single molecular feature, usually a protein target. This approach was adopted decades ago,
+            before the emergence of omics technologies. Today's technologies can profile thousands of molecular features, including proteins, mRNAs, and
+            metabolites, all of which can contribute to disease development. Finding one magic bullet among these thousands of features is challenging. Moreover,
+            focusing on a single feature does not make full use of the information generated by new omics technologies. We employ a systems approach that
+            considers how drugs affect a disease gene expression signature (a set of up- and down-regulated disease genes). This approach has led to the discovery of
+            therapeutic candidates for <a href="http://www.gastrojournal.org/article/S0016-5085(17)30264-0/abstract" target="_blank">hepatocellular carcinoma (HCC)</a>,
+            <a href="http://www.ncbi.nlm.nih.gov/pubmed/27863422" target="_blank">Ewing sarcoma</a>,
+            <a href="http://www.ncbi.nlm.nih.gov/pubmed/29093271" target="_blank">basal cell carcinoma</a>,
+            <a href="https://molpharm.aspetjournals.org/content/101/1/1" target="_blank">melanoma</a>,
+            <a href="https://www.nature.com/articles/s43587-021-00122-7" target="_blank">Alzheimer's disease</a>,
+            <a href="https://doi.org/10.1186/s40478-022-01463-z" target="_blank">diffuse intrinsic pontine glioma (DIPG)</a>,
+            <a href="https://link.springer.com/article/10.1186/s13046-023-02849-0" target="_blank">prostate cancer bone metastasis</a>,
+            and <a href="https://www.cell.com/iscience/fulltext/S2589-0042(22)01340-2" target="_blank">SARS-CoV-2</a>. We also found that a drug's potency in reversing disease gene expression
+            correlates with its efficacy, providing strong evidence for using this approach in drug repurposing (<a href="https://www.nature.com/articles/ncomms16022" target="_blank">Chen, Nature Communications, 2017</a>).
+            We developed a drug repurposing platform called <a href="http://octad.org/" target="_blank">OCTAD</a> (<a href="https://www.nature.com/articles/s41596-020-00430-z" target="_blank">Zeng, Nature Protocols, 2021</a>), which allows researchers to predict repurposed drug candidates for cancers and cancer subtypes.</p>
+          <p>We actively develop new methods to support novel compound screening and lead optimization. Our recent conference papers have demonstrated their feasibility by improving training data quality (<a href="https://arxiv.org/abs/2012.13670" target="_blank">Sun, ICDM, 2020</a>), pre-training graph
+            neural networks (<a href="https://arxiv.org/abs/2106.04509" target="_blank">Sun, KDD, 2021</a>), and applying tree search-based multi-objective optimization (<a href="https://dl.acm.org/doi/10.1145/3534678.3542676" target="_blank">Sun, KDD, 2022</a>).
+            Our models can now quickly predict novel compounds from disease gene expression
+            profiles. The lab has set up a bench to validate new candidates for multiple diseases, including HCC, DIPG, and SARS-CoV-2.</p>
+          <p>With the emergence of single-cell RNA-seq data, we apply this approach to identify compounds that could control cell lineage development
+            or modulate the microenvironment. This approach also holds great promise for identifying novel inhibitors of undruggable targets.
+            On the technical side, we develop methods that support de novo drug design using advanced machine learning.</p>
         </div>
       </div>
+
       <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-8 col-md-push-3">
+
+      <!-- 2. OMICS-based biomarker and target identification -->
+      <div class="row">
+        <div class="col-sm-4">
+          <a class="research-figure" href="fig/lab_research_2.jpg" target="_blank">
+            <img src="fig/lab_research_2.jpg" alt="Biomarker and target identification research overview">
+            <span class="caption">Click to enlarge</span>
+          </a>
+        </div>
+        <div class="col-sm-8">
           <p class="lead">OMICS-based biomarker and target identification</p>
-<p>The omics-based drug discovery work could not flourish without an extensive understanding of disease mechanisms. Therefore, the second pillar of the lab research
-    focuses on leveraging emerging single-cell RNASeq, spatial transcriptomics, rich bulk gene expression profiles, and advanced machine learning to identify novel biomarkers 
-    and therapeutic targets. We started this endeavor by working with local physicians to predict MODS patients who would need ECMO life support
-    (<a href="https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(20)30498-9/fulltext" target="_blank">Shankar, EBioMedicine, 2021</a>).
-    We currently utilize single-cell omics to delineate cell compositions and cell-cell interactions.
-
-<p>In addition to the MODS biomarker work, four projects are undergoing: 1) characterizing microenvironment of liver diseases through in silico characterization of bulk
-    tissues and spatial transcriptomics (<a href="https://github.com/Bin-Chen-Lab/sigatlas" target="_blank">GitHub</a>), 2) 
-    portraying pan-cancer liver metastasis microenvironment (<a href="https://github.com/Bin-Chen-Lab/METCompare" target="_blank">GitHub</a>), 
-    3) discovering bispecific antibody targets for cancer immunotherapy  (<a href="https://github.com/Bin-Chen-Lab/bsAbsFinder" target="_blank">GitHub</a>), and 4) predicting surfaceome using single-cell transcriptomics and transfer learning  (<a href="https://github.com/Bin-Chen-Lab/spider" target="_blank">GitHub</a>).
-
-          </div>
-        <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/lab_research_2.jpg">
+          <p>Omics-based drug discovery cannot flourish without a deep understanding of disease mechanisms. Therefore, the second pillar of our research
+            focuses on leveraging emerging single-cell RNA-seq, spatial transcriptomics, rich bulk gene expression profiles, and advanced machine learning to identify novel biomarkers
+            and therapeutic targets. We started this endeavor by working with local physicians to predict which patients with multiple organ dysfunction syndrome (MODS) would need ECMO life support
+            (<a href="https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(20)30498-9/fulltext" target="_blank">Shankar, EBioMedicine, 2021</a>).
+            We currently use single-cell omics to delineate cell composition and cell-cell interactions.</p>
+          <p>In addition to the MODS biomarker work, four projects are underway: 1) characterizing the microenvironment of liver diseases through in silico analysis of bulk
+            tissues and spatial transcriptomics (<a href="https://github.com/Bin-Chen-Lab/sigatlas" target="_blank">GitHub</a>), 2)
+            portraying the pan-cancer liver metastasis microenvironment (<a href="https://github.com/Bin-Chen-Lab/METCompare" target="_blank">GitHub</a>),
+            3) discovering bispecific antibody targets for cancer immunotherapy (<a href="https://github.com/Bin-Chen-Lab/bsAbsFinder" target="_blank">GitHub</a>), and 4) predicting the surfaceome using single-cell transcriptomics and transfer learning (<a href="https://github.com/Bin-Chen-Lab/spider" target="_blank">GitHub</a>).</p>
         </div>
       </div>
+
       <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-8 col-md-push-3">
+
+      <!-- 3. Virtual platform to support translational drug discovery -->
+      <div class="row">
+        <div class="col-sm-4">
+          <a class="research-figure" href="fig/lab_research3.png" target="_blank">
+            <img src="fig/lab_research3.png" alt="Big data and AI connecting patients, tissue samples, and in vitro and in vivo models for drug discovery">
+            <span class="caption">Click to enlarge</span>
+          </a>
+        </div>
+        <div class="col-sm-8">
           <p class="lead">Virtual platform to support translational drug discovery</p>
-<p>In order to increase drug discovery success rates, we have to scrutinize every step in translational research. The lab is dedicated to developing a virtual 
-    platform supported by machine learning and data analytics. The platform includes <a href="https://www.nature.com/articles/s41596-020-00430-z" target="_blank">tumor sample selection</a>, 
-    <a href="https://rdcu.be/bjyiV" target="_blank">reference normal tissue selection</a>, 
-    <a href="https://www.nature.com/articles/s41467-019-11415-2" target="_blank">cell line evaluation</a>, 
-    <a href="http://psb.stanford.edu/psb-online/proceedings/psb19/hu.pdf" target="_blank">pharmacogenomic data correction</a>, and EHR data cleaning and mining ( <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9285138/" target="_blank">MetBERT</a>).
-    We recently develop <a href="https://github.com/Bin-Chen-Lab/transcell" target="_blank">TransCell</a> that allows in-silico characterization of genomic features and cellular responses solely from gene expression data. The lab continues to leverage open data 
- and proprietary data (the EHR data of 2 million patients and >8000 biobank patient specimens at Corewell Health) and develop computational tools 
-    to answer interesting questions in translational research. 
-          </div>
-        <div class="col-md-3 col-md-pull-8">
-          <img class="featurette-image img-responsive center-block" data-src="" alt="Generic placeholder image" src="fig/lab_research3.png" height="150%" width="150%">
+          <p>To increase drug discovery success rates, we must scrutinize every step of translational research. The lab is dedicated to developing a virtual
+            platform powered by machine learning and data analytics. The platform includes <a href="https://www.nature.com/articles/s41596-020-00430-z" target="_blank">tumor sample selection</a>,
+            <a href="https://rdcu.be/bjyiV" target="_blank">reference normal tissue selection</a>,
+            <a href="https://www.nature.com/articles/s41467-019-11415-2" target="_blank">cell line evaluation</a>,
+            <a href="http://psb.stanford.edu/psb-online/proceedings/psb19/hu.pdf" target="_blank">pharmacogenomic data correction</a>, and EHR data cleaning and mining (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9285138/" target="_blank">MetBERT</a>).
+            We recently developed <a href="https://github.com/Bin-Chen-Lab/transcell" target="_blank">TransCell</a>, which enables in silico characterization of genomic features and cellular responses solely from gene expression data. The lab continues to leverage open data
+            and proprietary data (EHR data from 2 million patients and more than 8,000 biobank patient specimens at Corewell Health) and to develop computational tools
+            that answer important questions in translational research.</p>
         </div>
       </div>
-     
-                  <div class="row featurette">
-            <div class="col-md-8 col-md-push-3">
-                <iframe width="425" height="355" src="https://www.youtube.com/embed/oDcEDV9RYII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
 
+      <!-- FOOTER -->
       <hr class="featurette-divider">
       <footer>
         <p></p>
@@ -159,23 +185,15 @@
               <a href="https://www.msu.edu/" target="_blank">Michigan State University</a>
             </p>
       </footer>
-      <div class="row">
-        <!-- /.container -->
-        <!-- Bootstrap core JavaScript==================================================-
-        ->
-    <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>
-          window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-        </script>
-        <script src="dist/js/bootstrap.min.js"></script>
-        <!-- Just to make our placeholder images work. Don't actually
-        copy the next line! -->
-        <script src="assets/js/vendor/holder.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-      </div>
     </div>
-  
+    <!-- /.container -->
+    <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>
+        window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+      </script>
+      <script src="dist/js/bootstrap.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
 </body></html>
